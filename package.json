@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "~1.9.0",
-    "chai-jquery": "^1.2.3",
+    "chai-jquery": "~1.2.3",
     "connect-livereload": "~0.3.2",
     "glob": "~3.2.9",
     "grunt": "^0.4.5",
@@ -59,7 +59,8 @@
     "sinon": "^1.9.1",
     "sinon-chai": "~2.5.0",
     "time-grunt": "^0.3.1",
-    "yamljs": "^0.1.5"
+    "yamljs": "^0.1.5",
+    "karma-chai-jquery": "~1.0.0"
   },
   "engines": {
     "node": ">=0.8.0"
