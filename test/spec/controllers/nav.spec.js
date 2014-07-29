@@ -70,14 +70,20 @@ define([
     // tests on list()
     describe('list()', function () {
       it('should render the movie list view', function () {
-        // query the after
+        // view = movielist.js (ul.table-view)
         var view = this.controller.list().currentView;
-        // console.log('this.controller.region', this.controller.region.$el.find('ul.table-view').length);
+        var $el = view.$el;
+        $el.should.have.length(1);
+        $el.attr('class').should.to.equal('table-view');
 
+        // jquery chai syntax
         // view.$el.should.have.class('table-view');
       });
 
       it('should render the same number of items', function () {
+        var view = this.controller.list().currentView;
+        var $el = view.$el;
+        $el.find('li.media').should.have.length(3);
       });
 
       it('should have three items', function () {
@@ -90,8 +96,7 @@ define([
     describe('showMovie()', function () {
       it('should render the movie details view', function () {
         var view = this.controller.showMovie(moviesMock[0].__id);
-        // expect(view.$el.length).to.be.above(0);
-        view.$el.should.have.length(1);
+        view.$el.find('.media').should.have.length(1);
       });
 
       it('should render the expected movie', function () {
